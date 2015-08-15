@@ -1,4 +1,14 @@
-<p id="notice"><%= notice %></p>
+<script>
+  $(document).ready(function() {
+    return $("#calendar").fullCalendar({
+      events: '/workouts.json'
+    });
+  });
+</script>
+  .fc-past{background-color:red;}
+<style>
+  
+</style>
 
 <h1>Listing Workouts</h1>
 
@@ -18,8 +28,8 @@
       <tr>
         <td><%= workout.title %></td>
         <td><%= workout.description %></td>
-        <td><%= workout.start_time %></td>
-        <td><%= workout.end_time %></td>
+        <td><%= workout.start %></td>
+        <td><%= workout.end %></td>
         <td><%= link_to 'Show', workout %></td>
         <td><%= link_to 'Edit', edit_workout_path(workout) %></td>
         <td><%= link_to 'Destroy', workout, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -32,9 +42,6 @@
 
 <%= link_to 'New Workout', new_workout_path %>
 
-<div id="calendar" style="width: 800px"></div>
+<div id="calendar" style="width: 800px">
 
-
-<script>
-  $('#calendar').fullCalendar();
-</script>
+</div>

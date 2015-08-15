@@ -3,8 +3,8 @@ class CreateWorkouts < ActiveRecord::Migration
     create_table :workouts do |t|
       t.string :title
       t.text :description
-      t.datetime :start_time
-      t.datetime :end_time
+      t.datetime :start
+      t.datetime :end
 
       t.timestamps null: false
     end

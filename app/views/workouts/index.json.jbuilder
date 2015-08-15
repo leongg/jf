@@ -1,4 +1,6 @@
 json.array!(@workouts) do |workout|
-  json.extract! workout, :id, :title, :description, :start_time, :end_time
-  json.url workout_url(workout, format: :json)
+  json.extract! workout, :id, :title, :description, :start, :end
+  json.start workout.start
+  json.end workout.end
+  json.url workout_url(workout, format: :html)
 end
